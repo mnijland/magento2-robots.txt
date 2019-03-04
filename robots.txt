@@ -1,3 +1,8 @@
+Sitemap: https://www.yourstore.com/pub/sitemap.xml
+
+#Staging server
+Disallow: /staging.yourstore.com/
+
 User-agent: *
 
 # Directories
@@ -12,6 +17,7 @@ Disallow: /setup/
 Disallow: /update/
 Disallow: /var/
 Disallow: /vendor/
+Disallow: /404/ 
 
 # Paths (clean URLs)
 Disallow: /index.php/
@@ -20,11 +26,15 @@ Disallow: /catalog/category/view/
 Disallow: /catalog/product/view/
 Disallow: /catalogsearch/
 Disallow: /checkout/
+Disallow: /onestepcheckout/
 Disallow: /control/
 Disallow: /contacts/
 Disallow: /customer/
+Disallow: /customer/account/
+Disallow: /customer/account/login/
 Disallow: /customize/
 Disallow: /newsletter/
+Disallow: /poll/
 Disallow: /review/
 Disallow: /sendfriend/
 Disallow: /wishlist/
@@ -44,10 +54,11 @@ Disallow: /php.ini.sample
 Disallow: /RELEASE_NOTES.txt
 
 # Do not index pages that are sorted or filtered.
-Disallow: /*?*product_list_mode=
-Disallow: /*?*product_list_order=
-Disallow: /*?*product_list_limit=
-Disallow: /*?*product_list_dir=
+Disallow: /*?dir*
+Disallow: /*?dir=desc
+Disallow: /*?dir=asc
+Disallow: /*?limit=all
+Disallow: /*?mode*
 
 # Do not index session ID
 Disallow: /*?SID=
@@ -61,3 +72,6 @@ Disallow: /*.Svn$
 Disallow: /*.Idea$
 Disallow: /*.Sql$
 Disallow: /*.Tgz$
+
+#Captcha
+Disallow: /captcha/refresh/
